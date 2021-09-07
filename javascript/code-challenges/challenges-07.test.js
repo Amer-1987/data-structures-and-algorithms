@@ -26,6 +26,10 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+  let arr = starWarsArr.sort(function (a, b) {
+    return b.height - a.height;
+  });
+  return arr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +95,9 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let array=arr.split('');
+  return array;
+
 };
 
 
@@ -138,6 +145,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let fullIngredients=recipe.ingredients;
+  fullIngredients.forEach(item=>{
+    let ingredients=fullIngredients[i].slice(2);
+result.push(ingredients);
+  })
   return result;
 };
 
