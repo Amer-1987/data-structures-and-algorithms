@@ -56,6 +56,18 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  let arr = charArray.sort((a,b) => {
+    if (a.children.length === b.children.length) {
+      if (a.name > b.name) {
+        return 1;
+      }
+    } else {
+      if (a.children.length < b.children.length) {
+        return -1;
+      }
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,8 +98,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  let regix1 = /\d/g;
-  input = regix1.test(input);
+  let regex1 = /\d/g;
+  input = regex1.test(input);
   return input;
 };
 
@@ -100,8 +112,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
-  let regix1 = /(world)/g;
-  return regix1.test(input);
+  let regex1 = /(world)/g;
+  return regex1.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +126,17 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex1=/\b[A-Z](\w)*/g;
+
+  let result=str.match(regex1);
+
+  if (result) {
+
+    return result;
+
+  } else {
+    return[];
+  }
 
 };
 
@@ -125,15 +148,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  // let regix1 =
-  //   let result = [];
-  // arr.forEach(item => {
-  //   if (regix1.test(item)) {
-  //     result.push(item)
-  //   }
+  let regex1 =/\b[A-J](\w)*/gi;
+    let result = [];
+  arr.find(arr => {
+    if (regex1.test(arr)) {
+      result.push(arr)
+    }
 
-  // })
-  // return result;
+  })
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
